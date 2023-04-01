@@ -48,6 +48,7 @@ pub fn run(cache: &Cache, out_dir: &Path, args: &[String], install_permitted: bo
     };
 
     PBAR.info("Optimizing wasm binaries with `wasm-opt`...");
+    PBAR.info(&format!("Will use  wasm-opt at {:?}", wasm_opt));
 
     for file in out_dir.read_dir()? {
         let file = file?;
